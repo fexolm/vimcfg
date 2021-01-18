@@ -8,9 +8,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'rhysd/vim-clang-format'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -31,14 +31,18 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 
-let NERDTreeShowHidden=1
 
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/clang-format.vim
 source $HOME/.config/nvim/ctrlp.vim
 source $HOME/.config/nvim/cpp-highlight.vim
+source $HOME/.config/nvim/easymotion.vim
+
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
+
+map <C-p> :Files<CR>
+
 colorscheme badwolf
 set laststatus=2
-map ; :Files<CR>
-map <C-n> :NERDTreeToggle<CR>
 
