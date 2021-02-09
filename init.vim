@@ -18,9 +18,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='tomorrow'
 
 
-set number
+set nu rnu
 set hidden
 set nobackup
+set noswapfile
 set nowritebackup
 set cmdheight=2
 set updatetime=300
@@ -42,3 +43,5 @@ set laststatus=2
 map ; :Files<CR>
 map <C-n> :NERDTreeToggle<CR>
 
+inoremap jk <Esc>
+inoremap kj <Esc>
