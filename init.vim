@@ -11,6 +11,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'embear/vim-localvimrc'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'easymotion/vim-easymotion'
+Plug 'tikhomirov/vim-glsl'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -31,6 +33,7 @@ set autoindent
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+set cursorline
 
 
 source $HOME/.config/nvim/coc.vim
@@ -44,7 +47,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 map <C-p> :Files<CR>
 
-colorscheme badwolf
+set background=dark
+colorscheme gruvbox 
+
 set laststatus=2
 
 inoremap jk <Esc>
