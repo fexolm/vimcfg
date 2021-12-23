@@ -13,6 +13,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'easymotion/vim-easymotion'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -45,7 +46,10 @@ source $HOME/.config/nvim/easymotion.vim
 let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
-map <C-p> :Files<CR>
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+map <C-p> :GFiles<CR>
+map <C-F> :Ag<CR>
 
 set background=dark
 colorscheme gruvbox 
