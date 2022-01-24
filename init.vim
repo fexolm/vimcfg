@@ -9,11 +9,11 @@ Plug 'preservim/nerdtree'
 Plug 'rhysd/vim-clang-format'
 Plug 'tpope/vim-fugitive'
 Plug 'embear/vim-localvimrc'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'easymotion/vim-easymotion'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -36,16 +36,13 @@ set tabstop=4
 set shiftwidth=4
 set cursorline
 
+luafile $HOME/.config/nvim/treesitter.lua
 
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/clang-format.vim
 source $HOME/.config/nvim/ctrlp.vim
-source $HOME/.config/nvim/cpp-highlight.vim
 source $HOME/.config/nvim/easymotion.vim
-
-let NERDTreeShowHidden=1
-map <C-n> :NERDTreeToggle<CR>
-
+source $HOME/.config/nvim/nerdtree.vim
 
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 map <C-p> :GFiles<CR>
